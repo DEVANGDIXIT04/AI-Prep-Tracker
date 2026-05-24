@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Placement Prep Tracker 🚀
 
-## Getting Started
+A comprehensive, AI-powered dashboard designed for software engineering students and professionals to track their tech placement preparation. This platform centralizes Data Structures & Algorithms (DSA) tracking, contest performance, project management, and interview preparation with advanced AI tooling.
 
-First, run the development server:
+![Dashboard Preview](https://via.placeholder.com/1000x500.png?text=AI+Placement+Tracker+Dashboard) *(Replace with actual screenshot)*
 
+## ✨ Key Features
+
+### 📊 Core Tracking Modules
+- **DSA Problem Tracker**: Log your LeetCode, Codeforces, and CodeChef problems. Tag them by topic, difficulty, and status.
+- **Analytics & Heatmaps**: Visualize your progress with a GitHub-style daily activity heatmap, Recharts-powered topic distribution pie charts, and weekly velocity bar charts.
+- **Project Kanban Board**: Drag-and-drop Kanban board to manage your portfolio projects from `Idea` -> `In Progress` -> `Completed` -> `Deployed`.
+- **Contest Logger**: Track your contest ratings across multiple platforms over time.
+- **Resume Manager**: Upload and version-control your ATS-friendly resume PDFs via Vercel Blob.
+
+### 🤖 Google Gemini AI Integrations
+Powered by the `@google/generative-ai` SDK (`gemini-3.5-flash` and `gemini-3.1-pro`):
+- **AI Mock Interviewer**: A streaming chat interface that acts as a strict FAANG interviewer. It asks medium-hard DSA questions, evaluates your approach, and scores your performance out of 10.
+- **AI Question Bank**: Generate custom practice questions tailored to specific topics complete with hidden hints.
+- **AI Roadmap Generator**: Input your target company (e.g., Google), role, and timeline (e.g., 3 months). The AI generates a customized, week-by-week study curriculum with checkbox tracking.
+- **Weak Topic Analyzer**: Scans your DSA logs to identify your lowest-performing topics and generates a targeted 7-day practice plan to fix the gap.
+- **Resume Bullet Generator**: Instantly generate high-impact, action-verb-driven resume bullet points for your projects based on their description and tech stack.
+
+### 🎨 Modern UI/UX
+- Built with **shadcn/ui** and **Tailwind CSS**.
+- Fully responsive design.
+- **Dark/Light Mode** toggle.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS & shadcn/ui
+- **Database**: PostgreSQL (via Neon)
+- **ORM**: Prisma
+- **Authentication**: NextAuth.js (Google OAuth)
+- **Storage**: Vercel Blob
+- **Charts/Data Vis**: Recharts
+- **Drag & Drop**: @dnd-kit/core
+- **AI**: Google Generative AI SDK
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/DEVANGDIXIT04/AI-Prep-Tracker.git
+cd AI-Prep-Tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Setup Environment Variables
+Create a `.env` file in the root directory and add the following keys:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Database
+DATABASE_URL="postgresql://user:password@host/db?sslmode=require"
 
-## Learn More
+# NextAuth
+NEXTAUTH_SECRET="your_random_secret_string"
+NEXTAUTH_URL="http://localhost:3000"
 
-To learn more about Next.js, take a look at the following resources:
+# Google OAuth
+GOOGLE_CLIENT_ID="your_google_client_id"
+GOOGLE_CLIENT_SECRET="your_google_client_secret"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Vercel Blob (for Resumes)
+BLOB_READ_WRITE_TOKEN="your_vercel_blob_token"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Google Gemini AI
+GEMINI_API_KEY="your_gemini_api_key"
+```
 
-## Deploy on Vercel
+### 4. Setup the Database
+Push the Prisma schema to your PostgreSQL database:
+```bash
+npx prisma db push
+npx prisma generate
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Run the Dev Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🌐 Deployment
+This project is optimized for deployment on **Vercel**. 
+1. Import the repository into Vercel.
+2. Add your `.env` variables in the Vercel project settings.
+3. Deploy! (Don't forget to update your Google OAuth Authorized URIs with your new live Vercel domain).
