@@ -1,8 +1,10 @@
 # AI Placement Prep Tracker 🚀
 
+**🌍 Live Demo:** [https://ai-prep-tracker-lyart.vercel.app/](https://ai-prep-tracker-lyart.vercel.app/)
+
 A comprehensive, AI-powered dashboard designed for software engineering students and professionals to track their tech placement preparation. This platform centralizes Data Structures & Algorithms (DSA) tracking, contest performance, project management, and interview preparation with advanced AI tooling.
 
-![Dashboard Preview](https://via.placeholder.com/1000x500.png?text=AI+Placement+Tracker+Dashboard) *(Replace with actual screenshot)*
+![Dashboard Preview](./public/dashboard.png)
 
 ## ✨ Key Features
 
