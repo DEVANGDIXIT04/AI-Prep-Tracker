@@ -4,7 +4,7 @@
 
 A comprehensive, AI-powered dashboard designed for software engineering students and professionals to track their tech placement preparation. This platform centralizes Data Structures & Algorithms (DSA) tracking, contest performance, project management, and interview preparation with advanced AI tooling.
 
-![Dashboard Preview](./public/dashboard.png)
+![Dashboard Preview](./dashboard.png)
 
 ## ✨ Key Features
 
